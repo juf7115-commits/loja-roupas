@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Moda Jovem</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.produto {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #333;
+}
+
+#carrinho {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Moda Jovem</h1>
+<p>Loja online de roupas</p>
+</header>
+
+<section class="produtos">
+<div class="produto">
+<img src="https://via.placeholder.com/250">
+<h2>Camiseta</h2>
+<p>R$ 49,90</p>
+<button onclick="comprar(49.90)">Comprar</button>
+</div>
+
+<div class="produto">
+<img src="https://via.placeholder.com/250">
+<h2>Calça Jeans</h2>
+<p>R$ 99,90</p>
+<button onclick="comprar(99.90)">Comprar</button>
+</div>
+
+<div class="produto">
+<img src="https://via.placeholder.com/250">
+<h2>Jaqueta</h2>
+<p>R$ 149,90</p>
+<button onclick="comprar(149.90)">Comprar</button>
+</div>
+</section>
+
+<section id="carrinho">
+<h2>🛒 Carrinho</h2>
+<p>Total: R$ <span id="total">0.00</span></p>
+</section>
+
+<footer>
+<p>Site criado para trabalho escolar</p>
+</footer>
+
+<script>
+let total = 0;
+
+function comprar(preco) {
+    total += preco;
+    document.getElementById("total").innerText = total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
